@@ -1,7 +1,6 @@
 
-
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 
 const Resume = () => {
@@ -19,9 +18,6 @@ const Resume = () => {
         >
           Download My Resume
         </a>
-        <div className="mt-2 mb-2 text-center">
-                 <Link to="/Contact" className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 text-white py-3 px-6 rounded-full font-semibold shadow-lg transform transition hover:scale-105 animate-fadeIn" style={{ animationDelay: '0.4s' }}> Contact </Link> 
-                  </div> 
       </div>
     </div>
   );

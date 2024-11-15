@@ -67,24 +67,22 @@ const projects = [
 
 const Projects = () => {
   return (
-     <div id="projects" className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white py-12 px-4"> 
-     <h2 className="text-4xl font-bold mb-8 text-center animate-fadeIn">Projects</h2>
-     <div className="mt-2 mb-2 text-center">
-                 <Link to="/Resume" className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 text-white py-3 px-6 rounded-full font-semibold shadow-lg transform transition hover:scale-105 animate-fadeIn" style={{ animationDelay: '0.4s' }}> Resume </Link> 
+ 
+    <div id="projects" className=" min-h-screen  bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white py-12 px-4 ">
+      <h2 className="text-4xl font-bold mb-8 text-center animate-fadeIn mt-8">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-12"> 
+          {projects.map((project, index) => ( <div key={index} className="bg-white bg-opacity-20 backdrop-blur-lg p-6 rounded-xl shadow-2xl flex flex-col transform transition duration-500 hover:scale-105 hover:bg-opacity-30 animate-slideIn">
+             <img src={project.image} alt={`${project.title} screenshot`} className="w-full h-48 object-cover mb-4 rounded-lg shadow-lg"/> 
+             <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+              <p className="text-gray-300 mb-4">{project.description}</p>
+               <p className="text-sm text-gray-400 mb-4">{project.technologies}</p>
+                <div className="mt-auto">
+                   <Link to={project.link} className="bg-violet-500 text-white p-2 shadow-lg rounded-lg "> View Details </Link>
+                 </div>
                   </div> 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"> 
-        {projects.map((project, index) => ( <div key={index} className="bg-white bg-opacity-20 backdrop-blur-lg p-6 rounded-xl shadow-2xl flex flex-col transform transition duration-500 hover:scale-105 hover:bg-opacity-30 animate-slideIn"> 
-          <img src={project.image} alt={`${project.title} screenshot`} className="w-full h-48 object-cover mb-4 rounded-lg shadow-lg"/> 
-          <h3 className="text-2xl font-semibold mb-2">{project.title}</h3> 
-          <p className="text-gray-300 mb-4">{project.description}</p>
-           <p className="text-sm text-gray-400 mb-4">{project.technologies}</p>
-            <div className="mt-auto">
-               <Link to={project.link} className=" bg-blue-500 p-2 rounded-md"> View Details </Link>
-                </div> </div> ))}
-                 </div>
-                
-                 </div>
-    
+                ))}
+     </div> 
+     </div>
   );
 };
 
